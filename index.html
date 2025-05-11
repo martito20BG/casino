@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ресторант Казино | Шумен</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Images/favicon.png">
+
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+          <ul class="nav-left">
+            <li><a href="#home">НАЧАЛО</a></li>
+            <li><a href="#reservation">РЕЗЕРВИРАЙ</a></li>
+            <li><a href="#gallery">СНИМКИ</a></li>
+          </ul>
+      
+          <div class="logo">
+            <h1>КАЗИНО</h1>
+            <span>РЕСТОРАНТ</span>
+          </div>
+      
+          <ul class="nav-right">
+            <li><a href="#menu">КУХНЯ</a></li>
+            <li><a href="#history">ИСТОРИЯ</a></li>
+            <li><a href="#contact">КОНТАКТИ</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <section id="home">
+    <h1>Добре дошли в Ресторант Казино</h1>
+    <p>Италианска кухня и приятна атмосфера в сърцето на Шумен.</p>
+  </section>
+
+
+  <section id="menu" class="menu-fullscreen">
+    <div class="menu-container">
+      <button class="menu-arrow left" onclick="prevMenuPage()">&#10094;</button>
+  
+      <img id="menuImage" src="images/салати.png" alt="Меню" class="menu-img">
+  
+      <button class="menu-arrow right" onclick="nextMenuPage()">&#10095;</button>
+    </div>
+  </section>
+  
+
+<section id="gallery">
+  <h2>Галерия</h2>
+  <div class="gallery-grid">
+    <img src="Images/menu-gallery.png">
+    <img src="Images/gosho-gallery.png">
+    <img src="Images/pesht-gallery.png">
+    <img src="Images/outdoor-gallery.png">
+    <img src="Images/outdoor2-gallery.png">
+    <img src="Images/outdoor3-gallery.png">
+    <img src="Images/indoor-gallery.png">
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-nav">
+      <button onclick="prevImage()">❮</button>
+      <button onclick="nextImage()">❯</button>
+    </div>
+  </div>
+</section>
+
+  
+
+<section id="reservation">
+  <div class="reservation-box">
+    <h2><i class="fa fa-calendar-check-o"></i> Резервирай сега</h2>
+    <p class="note">Важно: Резервацията се счита за направена след потвърждение от наша страна, че сме я приели.</p>
+
+    <form id="reservation-form" class="reservation-form">
+      <label for="name">На чие име?</label>
+      <input type="text" id="name" name="name" placeholder="Вашето име" required>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Дата</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Час</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="people">Места</label>
+          <input type="number" id="people" name="people" min="1" max="20" placeholder="брой хора" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="0888 999 888" required>
+        </div>
+      </div>
+
+      <label for="message">Друга информация...</label>
+      <textarea id="message" name="message" placeholder="Допълнителна информация..."></textarea>
+
+      <p class="disclaimer">*След като попълнете формата, очаквайте обаждане от наша страна да потвърдим резервацията.</p>
+
+      <button type="submit">Изпрати заявка</button>
+    </form>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Контакти</h2>
+    <p>Адрес: бул. „Плиска“ 3, Градска градина, Шумен</p>
+    <p>Телефон: <a href="tel:0886922331">0886 922 331</a></p>
+    <p>Email: <a href="mailto:office@casino-shumen.bg">office@casino-shumen.bg</a></p>
+    <p><a href="https://www.facebook.com/p/Ресторант-Казиното-100023171480784/?locale=bg_BG" target="_blank">Facebook страница</a></p>
+  </section>
+
+<footer>
+  <p>© 2025 Ресторант КАЗИНО | град Шумен</p>
+  <p class="author">Изработил Мартин Ченгелиев</p>
+</footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
