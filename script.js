@@ -5,52 +5,33 @@ document.getElementById('reservation-form').addEventListener('submit', function(
   });
   
   document.addEventListener('DOMContentLoaded', function () {
-    const imagePaths = [
-      'images/menu.png',
-      'images/salati.png',
-      'images/predqstiq.png',
-      'images/pasta i rizoto.png',
-      'images/osnovni.png',
-      'images/plata i desert.png',
-      'images/kokteili i napitki.png',
-      'images/napitki2.png',
-      'images/krai.png',
-    ];
-  
-    let currentImageIndex = 0;
-    const menuImage = document.getElementById('menuImage');
+    const slides = document.querySelectorAll('.menu-img.slide');
     const leftArrow = document.querySelector('.menu-arrow.left');
     const rightArrow = document.querySelector('.menu-arrow.right');
+    let currentImageIndex = 0;
   
     function updateImage() {
-      menuImage.src = imagePaths[currentImageIndex];
+      slides.forEach((img, index) => {
+        img.style.display = index === currentImageIndex ? 'block' : 'none';
+      });
   
-      if (currentImageIndex === 0) {
-        leftArrow.style.display = 'none';
-      } else {
-        leftArrow.style.display = 'block';
-      }
-  
-      if (currentImageIndex === imagePaths.length - 1) {
-        rightArrow.style.display = 'none';
-      } else {
-        rightArrow.style.display = 'block';
-      }
+      leftArrow.style.display = currentImageIndex === 0 ? 'none' : 'block';
+      rightArrow.style.display = currentImageIndex === slides.length - 1 ? 'none' : 'block';
     }
   
     window.nextMenuPage = function () {
-      if (currentImageIndex < imagePaths.length - 1) {
+      if (currentImageIndex < slides.length - 1) {
         currentImageIndex++;
         updateImage();
       }
-    }
+    };
   
     window.prevMenuPage = function () {
       if (currentImageIndex > 0) {
         currentImageIndex--;
         updateImage();
       }
-    }
+    };
   
     updateImage();
   });
