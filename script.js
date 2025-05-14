@@ -6,15 +6,15 @@ document.getElementById('reservation-form').addEventListener('submit', function(
   
   document.addEventListener('DOMContentLoaded', function () {
     const imagePaths = [
-      'images/меню.png',
-      'images/салати.png',
-      'images/предястия.png',
-      'images/паста и ризото.png',
-      'images/Основни.png',
-      'images/плата и десерти.png',
-      'images/коктейли и напитки.png',
-      'images/напитки2.png',
-      'images/край.png',
+      'images/menu.png',
+      'images/salati.png',
+      'images/predqstiq.png',
+      'images/pasta i rizoto.png',
+      'images/osnovni.png',
+      'images/plata i desert.png',
+      'images/kokteili i napitki.png',
+      'images/napitki2.png',
+      'images/krai.png',
     ];
   
     let currentImageIndex = 0;
